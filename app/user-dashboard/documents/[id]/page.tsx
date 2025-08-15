@@ -23,11 +23,6 @@ import Image from "next/image"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 
-// Generate static params for dynamic routes
-export async function generateStaticParams() {
-  return []
-}
-
 export default function DocumentDetailPage() {
   const params = useParams()
   const documentId = params.id as string

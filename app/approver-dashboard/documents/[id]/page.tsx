@@ -21,11 +21,6 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { use, useState } from "react"
 
-// Generate static params for dynamic routes
-export async function generateStaticParams() {
-  return []
-}
-
 export default function DocumentReviewPage({ params }: { params: Promise<{ id: string }> }) {
   const [rejectionReason, setRejectionReason] = useState("")
   const [showRejectionModal, setShowRejectionModal] = useState(false)
