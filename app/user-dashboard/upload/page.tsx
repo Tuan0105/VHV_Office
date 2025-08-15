@@ -1,46 +1,46 @@
 "use client"
 
-import { useState } from "react"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { useToast } from "@/hooks/use-toast"
-import { useRouter } from "next/navigation"
-import { 
-  Upload, 
-  ArrowLeft,
-  FileText,
-  CheckCircle,
-  AlertCircle,
-  Clock,
-  Eye,
-  Save,
-  X,
-  Brain,
-  Zap,
-  Search,
-  FileCheck,
-  Home,
-  User,
-  LogOut
+import {
+    Brain,
+    CheckCircle,
+    Clock,
+    Eye,
+    FileCheck,
+    FileText,
+    Home,
+    LogOut,
+    Save,
+    Search,
+    Upload,
+    User,
+    X,
+    Zap
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 export default function UploadPage() {
   const [currentStep, setCurrentStep] = useState(1) // 1: Upload, 2: Processing, 3: Validation
   const [selectedDocumentType, setSelectedDocumentType] = useState("")
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [isProcessing, setIsProcessing] = useState(false)
+  const [currentStepIndex, setCurrentStepIndex] = useState(0)
+  const [processingProgress, setProcessingProgress] = useState(0)
   const [extractedData, setExtractedData] = useState<any>(null)
   const [autoTags, setAutoTags] = useState<string[]>([])
   const [globalSearchQuery, setGlobalSearchQuery] = useState('')
@@ -88,12 +88,16 @@ export default function UploadPage() {
     
     setIsProcessing(true)
     setCurrentStep(2)
+    setCurrentStepIndex(0)
+    setProcessingProgress(0)
     
     // Simulate processing steps
     let stepIndex = 0
     const interval = setInterval(() => {
       if (stepIndex < processingSteps.length - 1) {
         stepIndex++
+        setCurrentStepIndex(stepIndex)
+        setProcessingProgress(((stepIndex + 1) / processingSteps.length) * 100)
       } else {
         clearInterval(interval)
         setTimeout(() => {
@@ -168,6 +172,17 @@ export default function UploadPage() {
 
   const handleCancelLogout = () => {
     setShowLogoutModal(false)
+  }
+
+  const handleResetUpload = () => {
+    setCurrentStep(1)
+    setCurrentStepIndex(0)
+    setProcessingProgress(0)
+    setIsProcessing(false)
+    setSelectedFile(null)
+    setSelectedDocumentType("")
+    setExtractedData(null)
+    setAutoTags([])
   }
 
   // Step 1: Upload Screen
@@ -445,21 +460,23 @@ export default function UploadPage() {
               {processingSteps.map((step, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all ${
-                    index < (isProcessing ? processingSteps.length - 1 : processingSteps.length)
-                      ? 'bg-blue-50 text-blue-700'
-                      : 'bg-gray-50 text-gray-500'
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-500 ${
+                    index <= currentStepIndex
+                      ? index === currentStepIndex
+                        ? 'bg-blue-50 text-blue-700 border-2 border-blue-200'
+                        : 'bg-green-50 text-green-700'
+                      : 'opacity-0 h-0 overflow-hidden'
                   }`}
                 >
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                    index < (isProcessing ? processingSteps.length - 1 : processingSteps.length)
-                      ? 'bg-blue-600'
-                      : 'bg-gray-300'
+                    index === currentStepIndex
+                      ? 'bg-blue-600 animate-pulse'
+                      : 'bg-green-600'
                   }`}>
-                    {index < (isProcessing ? processingSteps.length - 1 : processingSteps.length) ? (
-                      <CheckCircle className="w-4 h-4 text-white" />
+                    {index === currentStepIndex ? (
+                      <Clock className="w-4 h-4 text-white animate-spin" />
                     ) : (
-                      <Clock className="w-4 h-4 text-white" />
+                      <CheckCircle className="w-4 h-4 text-white" />
                     )}
                   </div>
                   <span className="text-sm">{step}</span>
@@ -469,8 +486,17 @@ export default function UploadPage() {
 
             <div className="mt-6">
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-blue-600 h-2 rounded-full animate-pulse" style={{ width: '95%' }}></div>
+                <div 
+                  className="bg-blue-600 h-2 rounded-full transition-all duration-500" 
+                  style={{ width: `${processingProgress}%` }}
+                ></div>
               </div>
+              <p className="text-sm text-gray-600 mt-2">
+                {currentStepIndex < processingSteps.length - 1 
+                  ? `Đang xử lý bước ${currentStepIndex + 1}/${processingSteps.length}...`
+                  : "Hoàn tất xử lý..."
+                }
+              </p>
             </div>
           </div>
         </div>
@@ -786,21 +812,31 @@ export default function UploadPage() {
                   </div>
 
                   <div className="pt-4 border-t">
-                    <div className="flex space-x-3">
+                    <div className="flex flex-col space-y-3">
+                      <div className="flex space-x-3">
+                        <Button 
+                          onClick={handleSubmitForApproval}
+                          className="flex-1 bg-red-600 hover:bg-red-700"
+                        >
+                          <CheckCircle className="w-4 h-4 mr-2" />
+                          Gửi duyệt
+                        </Button>
+                        <Button variant="outline" className="flex-1">
+                          <Save className="w-4 h-4 mr-2" />
+                          Lưu nháp
+                        </Button>
+                        <Button variant="outline" onClick={handleBackToDashboard}>
+                          <X className="w-4 h-4 mr-2" />
+                          Hủy bỏ
+                        </Button>
+                      </div>
                       <Button 
-                        onClick={handleSubmitForApproval}
-                        className="flex-1 bg-red-600 hover:bg-red-700"
+                        variant="outline" 
+                        onClick={handleResetUpload}
+                        className="w-full border-2 border-gray-300 hover:border-red-600 text-gray-700 hover:text-red-600 transition-all duration-200"
                       >
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        Gửi duyệt
-                      </Button>
-                      <Button variant="outline" className="flex-1">
-                        <Save className="w-4 h-4 mr-2" />
-                        Lưu nháp
-                      </Button>
-                      <Button variant="outline" onClick={handleBackToDashboard}>
-                        <X className="w-4 h-4 mr-2" />
-                        Hủy bỏ
+                        <Upload className="w-4 h-4 mr-2" />
+                        Tải lên tài liệu khác
                       </Button>
                     </div>
                   </div>

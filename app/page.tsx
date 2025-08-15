@@ -2,46 +2,46 @@
 
 import type React from "react"
 
-import { useState, useEffect, useRef } from "react"
+import LoginModal from "@/components/login-modal"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import LoginModal from "@/components/login-modal"
 import {
-  FileText,
-  Clock,
-  DollarSign,
+  BookOpen,
   Brain,
+  Building,
   CheckSquare,
-  Upload,
-  Star,
   ChevronLeft,
   ChevronRight,
+  Clock,
+  DollarSign,
+  ExternalLink,
   Eye,
   FileSearch,
-  Target,
-  Play,
-  Pause,
-  Globe,
-  MapPin,
-  Phone,
-  Mail,
-  ExternalLink,
-  Building,
-  ShoppingCart,
-  BookOpen,
-  Heart,
+  FileText,
   Folder,
+  FolderOpen,
+  Globe,
+  Heart,
+  Mail,
+  MapPin,
+  Pause,
+  Phone,
+  Play,
   Plug,
   Search,
-  FolderOpen,
-  Tags,
   Shield,
+  ShoppingCart,
+  Star,
+  Tags,
+  Target,
+  Upload,
 } from "lucide-react"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 export default function VHVOfficeWebsite() {
   const [currentPage, setCurrentPage] = useState("home")
@@ -204,6 +204,7 @@ export default function VHVOfficeWebsite() {
   const [demoStep, setDemoStep] = useState(0) // 0: Upload, 1: Processing, 2: Results
   const [isDemoProcessing, setIsDemoProcessing] = useState(false)
   const [demoProgress, setDemoProgress] = useState(0)
+  const [currentStepIndex, setCurrentStepIndex] = useState(0)
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [filePreview, setFilePreview] = useState<string | null>(null)
   const [demoProcessingSteps] = useState([
@@ -220,6 +221,7 @@ export default function VHVOfficeWebsite() {
     setShowExtractedText(false)
     setDemoStep(0)
     setDemoProgress(0)
+    setCurrentStepIndex(0)
     setIsDemoProcessing(false)
     setSelectedFile(null)
     setFilePreview(null)
@@ -272,13 +274,15 @@ export default function VHVOfficeWebsite() {
     setDemoStep(1)
     setIsDemoProcessing(true)
     setDemoProgress(0)
+    setCurrentStepIndex(0) // Bắt đầu từ bước 0
     
     // Simulate processing steps
     let stepIndex = 0
     const interval = setInterval(() => {
       if (stepIndex < demoProcessingSteps.length - 1) {
         stepIndex++
-        setDemoProgress((stepIndex / demoProcessingSteps.length) * 100)
+        setCurrentStepIndex(stepIndex)
+        setDemoProgress(((stepIndex + 1) / demoProcessingSteps.length) * 100)
       } else {
         clearInterval(interval)
         setTimeout(() => {
@@ -294,6 +298,7 @@ export default function VHVOfficeWebsite() {
     setDemoStep(0)
     setIsDemoProcessing(false)
     setDemoProgress(0)
+    setCurrentStepIndex(0)
     setShowExtractedText(false)
     setSelectedFile(null)
     setFilePreview(null)
@@ -965,27 +970,30 @@ export default function VHVOfficeWebsite() {
                                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">File đã được chọn</h3>
                                 <div className="bg-gray-50 rounded-lg p-4 mb-6">
                                   <div className="flex items-center space-x-3">
-                                    <FileText className="w-8 h-8 text-blue-600" />
-                                    <div className="text-left">
-                                      <p className="font-medium text-gray-900">{selectedFile.name}</p>
+                                    <FileText className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                                    <div className="text-left min-w-0 flex-1">
+                                      <p className="font-medium text-gray-900 break-words">{selectedFile.name}</p>
                                       <p className="text-sm text-gray-500">
                                         {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
                                       </p>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="space-y-3">
+                                <div className="flex flex-col items-center">
                                   <Button 
                                     onClick={startDemoProcessing}
                                     className="bg-red-600 hover:bg-red-700 text-white hover:scale-110 transition-all duration-200 px-8 py-3 text-lg font-bold"
                                   >
                                     Bắt đầu xử lý AI
                                   </Button>
+                                  <div className="h-6"></div>
                                   <Button 
                                     variant="outline"
                                     onClick={() => {
                                       setSelectedFile(null)
                                       setFilePreview(null)
+                                      setCurrentStepIndex(0)
+                                      setDemoProgress(0)
                                     }}
                                     className="text-gray-600 hover:text-red-600"
                                   >
@@ -1009,21 +1017,23 @@ export default function VHVOfficeWebsite() {
                               {demoProcessingSteps.map((step, index) => (
                                 <div
                                   key={index}
-                                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all ${
-                                    index < (demoProgress / 100 * demoProcessingSteps.length)
-                                      ? 'bg-blue-50 text-blue-700'
-                                      : 'bg-gray-50 text-gray-500'
+                                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-500 ${
+                                    index <= currentStepIndex
+                                      ? index === currentStepIndex
+                                        ? 'bg-blue-50 text-blue-700 border-2 border-blue-200'
+                                        : 'bg-green-50 text-green-700'
+                                      : 'opacity-0 h-0 overflow-hidden'
                                   }`}
                                 >
                                   <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                                    index < (demoProgress / 100 * demoProcessingSteps.length)
-                                      ? 'bg-blue-600'
-                                      : 'bg-gray-300'
+                                    index === currentStepIndex
+                                      ? 'bg-blue-600 animate-pulse'
+                                      : 'bg-green-600'
                                   }`}>
-                                    {index < (demoProgress / 100 * demoProcessingSteps.length) ? (
-                                      <CheckSquare className="w-4 h-4 text-white" />
+                                    {index === currentStepIndex ? (
+                                      <Clock className="w-4 h-4 text-white animate-spin" />
                                     ) : (
-                                      <Clock className="w-4 h-4 text-white" />
+                                      <CheckSquare className="w-4 h-4 text-white" />
                                     )}
                                   </div>
                                   <span className="text-sm">{step}</span>
@@ -1032,11 +1042,16 @@ export default function VHVOfficeWebsite() {
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                               <div 
-                                className="bg-blue-600 h-2 rounded-full transition-all duration-300" 
+                                className="bg-blue-600 h-2 rounded-full transition-all duration-500" 
                                 style={{ width: `${demoProgress}%` }}
                               ></div>
                             </div>
-                            <p className="text-sm text-gray-600">Tiến độ: {Math.round(demoProgress)}%</p>
+                            <p className="text-sm text-gray-600">
+                              {currentStepIndex < demoProcessingSteps.length - 1 
+                                ? `Đang xử lý bước ${currentStepIndex + 1}/${demoProcessingSteps.length}...`
+                                : "Hoàn tất xử lý..."
+                              }
+                            </p>
                           </CardContent>
                         </Card>
                       )}
@@ -1059,7 +1074,7 @@ export default function VHVOfficeWebsite() {
                                 <span className="text-sm">Độ chính xác: 98%</span>
                               </div>
                             </div>
-                                                         <div className="space-y-3">
+                                                         <div className="flex flex-col items-center">
                                <Button 
                                  onClick={resetDemo}
                                  variant="outline"
@@ -1067,11 +1082,13 @@ export default function VHVOfficeWebsite() {
                                >
                                  Thử lại với tài liệu khác
                                </Button>
+                               <div className="h-6"></div>
                                <Button 
                                  onClick={() => {
                                    setDemoStep(0)
                                    setIsDemoProcessing(false)
                                    setDemoProgress(0)
+                                   setCurrentStepIndex(0)
                                    setShowExtractedText(false)
                                  }}
                                  className="bg-blue-600 hover:bg-blue-700 text-white"

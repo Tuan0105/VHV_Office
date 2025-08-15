@@ -6,16 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import {
-    AlertCircle,
-    ArrowLeft,
-    Calendar,
-    Check,
-    CheckCircle,
-    DollarSign,
-    Eye,
-    FileText,
-    User,
-    X
+  AlertCircle,
+  ArrowLeft,
+  Calendar,
+  Check,
+  CheckCircle,
+  DollarSign,
+  Eye,
+  FileText,
+  User,
+  X
 } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
