@@ -1,27 +1,25 @@
 "use client"
 
-import { useState } from "react"
-import { use } from "react"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { useRouter } from "next/navigation"
-import { 
-  ArrowLeft, 
-  CheckCircle, 
-  XCircle, 
-  Eye, 
-  FileText,
-  User,
-  Calendar,
-  DollarSign,
-  AlertCircle,
-  Check,
-  X
+import {
+    AlertCircle,
+    ArrowLeft,
+    Calendar,
+    Check,
+    CheckCircle,
+    DollarSign,
+    Eye,
+    FileText,
+    User,
+    X
 } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { use, useState } from "react"
 
 export default function DocumentReviewPage({ params }: { params: Promise<{ id: string }> }) {
   const [rejectionReason, setRejectionReason] = useState("")
