@@ -213,7 +213,7 @@ export default function IntegrationPage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Tích hợp</h1>
-        <p className="text-gray-600">Kết nối VHV Office với các hệ thống và ứng dụng khác để tự động hóa quy trình làm việc</p>
+        <p className="text-gray-600">Kết nối VOffice với các hệ thống và ứng dụng khác để tự động hóa quy trình làm việc</p>
       </div>
 
       {/* Khu vực 1: Thư viện Kết nối */}
@@ -224,7 +224,7 @@ export default function IntegrationPage() {
             Kết nối với các ứng dụng của bạn
           </CardTitle>
           <p className="text-gray-600">
-            Tự động hóa công việc bằng cách kết nối VHV Office với các công cụ bạn sử dụng hàng ngày như ERP, CRM và phần mềm kế toán.
+            Tự động hóa công việc bằng cách kết nối VOffice với các công cụ bạn sử dụng hàng ngày như ERP, CRM và phần mềm kế toán.
           </p>
         </CardHeader>
         <CardContent>

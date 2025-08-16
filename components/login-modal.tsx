@@ -72,9 +72,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
       
       // Demo account validation
       const demoAccounts = {
-        "admin@vhvoffice.vn": "admin",
-        "user@vhvoffice.vn": "user", 
-        "approver@vhvoffice.vn": "approver"
+        "admin@voffice.vn": "admin",
+        "user@voffice.vn": "user", 
+        "approver@voffice.vn": "approver"
       }
       
       const userEmail = formData.email.toLowerCase()
@@ -146,10 +146,10 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               {/* Logo */}
               <div className="flex items-center space-x-3 mb-8">
                 <div className="w-12 h-12 flex items-center justify-center shadow-lg">
-                  <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+                  <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
                 </div>
                 <div>
-                  <span className="text-2xl font-bold text-gray-900">VHV Office</span>
+                  <span className="text-2xl font-bold text-gray-900">VOffice</span>
                   <div className="text-sm text-gray-500">by VHV</div>
                 </div>
               </div>
@@ -196,9 +196,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                        <div className="bg-white rounded-lg p-3 shadow-sm">
                          <div className="flex items-center justify-between">
                            <div className="w-8 h-8 flex items-center justify-center">
-                             <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+                             <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
                            </div>
-                           <div className="text-xs text-gray-600">VHV Office</div>
+                           <div className="text-xs text-gray-600">VOffice</div>
                          </div>
                        </div>
                      </div>
@@ -215,7 +215,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                        <div className="bg-white rounded-lg p-3 shadow-sm">
                          <div className="flex items-center space-x-2">
                            <div className="w-6 h-6 flex items-center justify-center">
-                             <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+                             <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
                            </div>
                            <div className="text-xs text-gray-700">Document Ready</div>
                          </div>
@@ -237,7 +237,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               {/* Header */}
               <div className="text-center mb-8">
                 <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
-                  Đăng nhập vào VHV Office
+                  Đăng nhập vào VOffice
                 </h1>
                 <p className="text-gray-600">
                   Chào mừng trở lại! Vui lòng đăng nhập để tiếp tục.
@@ -390,24 +390,24 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                  <h4 className="text-sm font-medium text-gray-700 mb-3">Tài khoản Demo (Click để copy):</h4>
                  <div className="space-y-0">
-                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('admin@vhvoffice.vn')}>
+                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('admin@voffice.vn')}>
                      <div>
                        <span className="text-xs text-gray-500">Admin:</span>
-                       <span className="text-sm font-mono ml-2">admin@vhvoffice.vn</span>
+                       <span className="text-sm font-mono ml-2">admin@voffice.vn</span>
                      </div>
                      <span className="text-xs text-blue-600">Copy</span>
                    </div>
-                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('user@vhvoffice.vn')}>
+                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('user@voffice.vn')}>
                      <div>
                        <span className="text-xs text-gray-500">User:</span>
-                       <span className="text-sm font-mono ml-2">user@vhvoffice.vn</span>
+                       <span className="text-sm font-mono ml-2">user@voffice.vn</span>
                      </div>
                      <span className="text-xs text-blue-600">Copy</span>
                    </div>
-                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('approver@vhvoffice.vn')}>
+                   <div className="flex items-center justify-between p-2 bg-white rounded border hover:bg-gray-50 cursor-pointer" onClick={() => navigator.clipboard.writeText('approver@voffice.vn')}>
                      <div>
                        <span className="text-xs text-gray-500">Approver:</span>
-                       <span className="text-sm font-mono ml-2">approver@vhvoffice.vn</span>
+                       <span className="text-sm font-mono ml-2">approver@voffice.vn</span>
                      </div>
                      <span className="text-xs text-blue-600">Copy</span>
                    </div>

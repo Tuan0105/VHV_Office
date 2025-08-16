@@ -55,7 +55,7 @@ export default function AccountPage() {
 
   // Company data
   const [companyData, setCompanyData] = useState({
-    name: "VHV Office Company",
+    name: "VOffice Company",
     taxCode: "0123456789",
     address: "123 Đường ABC, Quận 1, TP.HCM",
     website: "https://vhvoffice.com",

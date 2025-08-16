@@ -4,7 +4,7 @@ import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: "VHV Office - Số hóa, lưu trữ, quản lý thông minh | VHV",
+  title: "VOffice - Số hóa, lưu trữ, quản lý thông minh | VOffice",
   description:
     "Giải pháp số hóa tài liệu toàn diện với AI OCR 98% chính xác, lưu trữ cấu trúc thông minh và quản lý tài liệu hiệu quả cho doanh nghiệp Việt Nam.",
     generator: 'v0.app'

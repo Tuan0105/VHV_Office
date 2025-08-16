@@ -195,10 +195,10 @@ export default function AdminDashboard() {
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 flex items-center justify-center">
-              <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+              <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
             </div>
             <div>
-              <span className="text-lg font-bold text-gray-900">VHV Office</span>
+              <span className="text-lg font-bold text-gray-900">VOffice</span>
               <div className="text-xs text-gray-500">Admin Dashboard</div>
             </div>
           </div>

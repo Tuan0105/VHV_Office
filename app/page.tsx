@@ -68,7 +68,7 @@ export default function VHVOfficeWebsite() {
 
   const testimonials = [
     {
-      quote: "VHV Office giúp chúng tôi số hóa 10.000 hóa đơn/tháng, tiết kiệm 40% thời gian!",
+      quote: "VOffice giúp chúng tôi số hóa 10.000 hóa đơn/tháng, tiết kiệm 40% thời gian!",
       author: "Nguyễn Văn A",
       position: "CEO Công ty ABC",
       company: "ABC Corp",
@@ -386,10 +386,10 @@ export default function VHVOfficeWebsite() {
             {/* Logo */}
             <div className="flex items-center space-x-3 fade-in visible">
               <div className="w-10 h-10 md:w-10 md:h-10 flex items-center justify-center shadow-lg">
-                <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+                <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
               </div>
               <div>
-                <span className="text-xl font-bold text-gray-900">VHV Office</span>
+                <span className="text-xl font-bold text-gray-900">VOffice</span>
                 <div className="text-xs text-gray-500">by VHV</div>
               </div>
             </div>
@@ -410,7 +410,7 @@ export default function VHVOfficeWebsite() {
                   currentPage === "about" ? "text-red-600 border-red-600" : ""
                 }`}
               >
-                Về VHV Office
+                Về VOffice
               </button>
               <button
                 onClick={() => navigateToPage("customers")}
@@ -480,7 +480,7 @@ export default function VHVOfficeWebsite() {
               onClick={() => navigateToPage("about")}
               className="text-gray-900 hover:text-red-600 transition-colors text-left text-lg"
             >
-              Về VHV Office
+              Về VOffice
             </button>
             <button
               onClick={() => navigateToPage("customers")}
@@ -536,7 +536,7 @@ export default function VHVOfficeWebsite() {
                     </Badge>
 
                     <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight fade-in">
-                      VHV Office: <span className="text-gradient">Số hóa, lưu trữ, quản lý thông minh</span>
+                      VOffice: <span className="text-gradient">Số hóa, lưu trữ, quản lý thông minh</span>
                     </h1>
 
                     <p className="text-lg lg:text-2xl text-gray-600 leading-relaxed slide-up">
@@ -550,7 +550,7 @@ export default function VHVOfficeWebsite() {
                         onClick={scrollToDemo}
                         className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold rounded-lg hover:scale-110 transition-all duration-200 shadow-xl hover:shadow-2xl"
                       >
-                        Thử VHV Office miễn phí
+                        Thử VOffice miễn phí
                       </Button>
                       <Button
                         size="lg"
@@ -683,7 +683,7 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-16 fade-in">
                   <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                    Lợi ích vượt trội của VHV Office
+                    Lợi ích vượt trội của VOffice
                   </h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
                     Tăng hiệu suất, tiết kiệm thời gian và chi phí cho doanh nghiệp Việt Nam
@@ -789,7 +789,7 @@ export default function VHVOfficeWebsite() {
                 <div className="max-w-4xl mx-auto zoom-in">
                   <div className="dashboard-mockup">
                     <div className="text-center mb-6 mt-8">
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">VHV Office Dashboard</h4>
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">VOffice Dashboard</h4>
                       <div className="flex items-center justify-center space-x-4 text-sm text-gray-600">
                         <div className="flex items-center space-x-2">
                           <Search className="w-4 h-4" />
@@ -839,7 +839,7 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-16 fade-in">
                   <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                    Công nghệ tiên tiến của VHV Office
+                    Công nghệ tiên tiến của VOffice
                   </h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
                     Kết hợp 4 công nghệ hàng đầu để mang lại độ chính xác tối ưu cho văn bản tiếng Việt
@@ -895,10 +895,10 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center mb-16 fade-in">
                   <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                    Trải nghiệm VHV Office ngay
+                    Trải nghiệm VOffice ngay
                   </h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Tải lên tài liệu của bạn và xem VHV Office hoạt động với độ chính xác 98%
+                    Tải lên tài liệu của bạn và xem VOffice hoạt động với độ chính xác 98%
                   </p>
                 </div>
 
@@ -1219,10 +1219,10 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16 fade-in">
                   <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                    Khách hàng nói gì về VHV Office?
+                    Khách hàng nói gì về VOffice?
                   </h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Hàng nghìn doanh nghiệp Việt Nam đã tin tưởng và sử dụng VHV Office
+                    Hàng nghìn doanh nghiệp Việt Nam đã tin tưởng và sử dụng VOffice
                   </p>
                 </div>
 
@@ -1309,7 +1309,7 @@ export default function VHVOfficeWebsite() {
                 <div className="max-w-6xl mx-auto">
                   <div className="text-center mb-16 fade-in">
                     <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6">
-                      Bắt đầu số hóa với VHV Office hôm nay
+                      Bắt đầu số hóa với VOffice hôm nay
                     </h2>
                     <p className="text-xl lg:text-2xl text-blue-100">
                       Chuyển đổi, lưu trữ, và quản lý tài liệu với công nghệ AI từ VHV
@@ -1436,7 +1436,7 @@ export default function VHVOfficeWebsite() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div className="text-center lg:text-left space-y-8">
                     <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight fade-in">
-                      VHV Office: <span className="text-gradient">Giải pháp số hóa & quản lý tài liệu toàn diện</span>
+                      VOffice: <span className="text-gradient">Giải pháp số hóa & quản lý tài liệu toàn diện</span>
                     </h1>
 
                     <p className="text-lg lg:text-xl text-gray-600 leading-relaxed slide-up">
@@ -1529,7 +1529,7 @@ export default function VHVOfficeWebsite() {
               <div className="absolute top-0 left-0 w-full h-8 lotus-border"></div>
               <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16 fade-in">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Công nghệ lõi của VHV Office</h2>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Công nghệ lõi của VOffice</h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
                     Nền tảng AI tiên tiến được tối ưu hóa đặc biệt cho văn bản tiếng Việt
                   </p>
@@ -1642,7 +1642,7 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="fade-in mb-12">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VHV Office hôm nay</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VOffice hôm nay</h2>
                     <p className="text-xl text-blue-100">
                       Chuyển đổi, lưu trữ, và quản lý tài liệu với công nghệ AI từ VHV
                     </p>
@@ -1681,11 +1681,11 @@ export default function VHVOfficeWebsite() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div className="text-center lg:text-left space-y-8">
                     <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight fade-in">
-                      <span className="text-gradient">Khách hàng tin dùng</span> VHV Office
+                      <span className="text-gradient">Khách hàng tin dùng</span> VOffice
                     </h1>
 
                     <p className="text-lg lg:text-xl text-gray-600 leading-relaxed slide-up">
-                      Hơn 500 doanh nghiệp và tổ chức Việt Nam đã chọn VHV Office để số hóa và quản lý tài liệu.
+                      Hơn 500 doanh nghiệp và tổ chức Việt Nam đã chọn VOffice để số hóa và quản lý tài liệu.
                     </p>
 
                     <Button
@@ -1757,7 +1757,7 @@ export default function VHVOfficeWebsite() {
                 <div className="text-center mb-16 fade-in">
                   <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Phục vụ đa dạng lĩnh vực</h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                    VHV Office đáp ứng nhu cầu số hóa tài liệu cho mọi ngành nghề tại Việt Nam
+                    VOffice đáp ứng nhu cầu số hóa tài liệu cho mọi ngành nghề tại Việt Nam
                   </p>
                 </div>
 
@@ -1889,7 +1889,7 @@ export default function VHVOfficeWebsite() {
                     Câu chuyện thành công từ khách hàng
                   </h2>
                   <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Những phản hồi tích cực từ các doanh nghiệp đã sử dụng VHV Office
+                    Những phản hồi tích cực từ các doanh nghiệp đã sử dụng VOffice
                   </p>
                 </div>
 
@@ -1928,7 +1928,7 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="fade-in mb-12">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VHV Office hôm nay</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VOffice hôm nay</h2>
                     <p className="text-xl text-blue-100">
                       Chuyển đổi, lưu trữ, và quản lý tài liệu với công nghệ AI từ VHV
                     </p>
@@ -1966,11 +1966,11 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 py-16 lg:py-24 relative z-10">
                 <div className="text-center space-y-8">
                   <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight fade-in">
-                    <span className="text-gradient">Liên hệ với</span> VHV Office
+                    <span className="text-gradient">Liên hệ với</span> VOffice
                   </h1>
 
                   <p className="text-lg lg:text-xl text-gray-600 leading-relaxed slide-up max-w-3xl mx-auto">
-                    Kết nối với đội ngũ VHV để trải nghiệm giải pháp số hóa và quản lý tài liệu tiên tiến.
+                    Kết nối với đội ngũ Vđể trải nghiệm giải pháp số hóa và quản lý tài liệu tiên tiến.
                   </p>
 
                   <Button
@@ -2032,10 +2032,10 @@ export default function VHVOfficeWebsite() {
                       <div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
                         <a
-                          href="mailto:contact@vhvoffice.vn"
+                          href="mailto:contact@vhv.vn"
                           className="text-blue-600 hover:text-red-600 transition-colors text-lg"
                         >
-                          contact@vhvoffice.vn
+                          contact@vhv.vn
                         </a>
                       </div>
                     </div>
@@ -2047,7 +2047,7 @@ export default function VHVOfficeWebsite() {
                       <div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Website</h3>
                         <a href="#" className="text-blue-600 hover:text-red-600 transition-colors text-lg">
-                          www.vhvoffice.vn
+                          www.voffice.vn
                         </a>
                       </div>
                     </div>
@@ -2058,7 +2058,7 @@ export default function VHVOfficeWebsite() {
                       <div className="space-y-6">
                         {/* Office Location with Map */}
                         <div className="text-center">
-                          <h3 className="text-lg font-semibold text-gray-800 mb-4">Văn phòng VHV Office</h3>
+                          <h3 className="text-lg font-semibold text-gray-800 mb-4">Văn phòng VOffice</h3>
                           
                           {/* Interactive Map */}
                           <div className="bg-white rounded-lg p-4 shadow-sm border mb-4">
@@ -2076,13 +2076,13 @@ export default function VHVOfficeWebsite() {
                                   className="rounded-lg"
                                 ></iframe>
                                 
-                                {/* Overlay with VHV Office Marker */}
+                                {/* Overlay with VOffice Marker */}
                                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                                   <div className="w-6 h-6 bg-red-600 rounded-full shadow-lg animate-pulse flex items-center justify-center">
                                     <div className="w-3 h-3 bg-white rounded-full"></div>
                                   </div>
                                   <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded shadow text-xs font-medium text-gray-700 whitespace-nowrap">
-                                    VHV Office
+                                    VOffice
                                   </div>
                                 </div>
                               </div>
@@ -2116,7 +2116,7 @@ export default function VHVOfficeWebsite() {
                               </div>
                               <div className="flex items-center space-x-3">
                                 <Mail className="w-4 h-4 text-green-600" />
-                                <span className="text-gray-700">contact@vhvoffice.vn</span>
+                                <span className="text-gray-700">contact@vhv.vn</span>
                               </div>
                             </div>
                           </div>
@@ -2262,7 +2262,7 @@ export default function VHVOfficeWebsite() {
               <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="fade-in mb-12">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VHV Office hôm nay</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Bắt đầu số hóa với VOffice hôm nay</h2>
                     <p className="text-xl text-blue-100">
                       Chuyển đổi, lưu trữ, và quản lý tài liệu với công nghệ AI từ VHV
                     </p>
@@ -2298,10 +2298,10 @@ export default function VHVOfficeWebsite() {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center shadow-lg">
-                  <img src="/logo.svg" alt="VHV Office Logo" className="w-full h-full" />
+                  <img src="/logo.svg" alt="VOffice Logo" className="w-full h-full" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold">VHV - Văn Hóa Việt</div>
+                  <div className="text-2xl font-bold">VOffice - Văn Hóa Việt</div>
                   <div className="text-sm text-gray-400">Công nghệ từ Văn Hóa Việt</div>
                 </div>
               </div>
@@ -2327,7 +2327,7 @@ export default function VHVOfficeWebsite() {
               <ul className="space-y-3 text-gray-400">
                 <li>
                   <button onClick={() => navigateToPage("home")} className="hover:text-red-400 transition-colors">
-                    VHV Office
+                    VOffice
                   </button>
                 </li>
                 <li>
@@ -2376,7 +2376,7 @@ export default function VHVOfficeWebsite() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} VHV - Văn Hóa Việt. Tất cả quyền được bảo lưu.</p>
+            <p>&copy; {new Date().getFullYear()} VOffice - Văn Hóa Việt. Tất cả quyền được bảo lưu.</p>
           </div>
         </div>
       </footer>

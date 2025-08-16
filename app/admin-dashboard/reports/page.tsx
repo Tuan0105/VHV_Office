@@ -163,7 +163,7 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Báo cáo & Thống kê</h1>
-        <p className="text-gray-600">Phân tích chi tiết hiệu suất và hiệu quả của hệ thống VHV Office</p>
+        <p className="text-gray-600">Phân tích chi tiết hiệu suất và hiệu quả của hệ thống VOffice</p>
       </div>
 
       {/* Global Filter Bar */}
